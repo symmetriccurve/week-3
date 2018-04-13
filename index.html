@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <head>
+        <!-- a static html page will not have any scripts as we are depending up on any external library to view the content
+          you might have seen few pages load faster wihtout styles like raw content then you see that the styles are applied, this is because the raw html pages are loaded
+          from the server bu these external scripts are loaded from somewhere else(in our case they are from cdnjs), we add absolutely neccesary scripts in the header
+          but we can add them anwhere else in the document.
+          -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <!-- if you go this script you can see all the code that facebook have developed until today, this code is a javascipt code. this code is responsible for
+        converting my react code into equivalent HTML and CSS, feel free to read through the code. Who knows who might also submit a enhancement to the existing code -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <!-- ReactDom is the Glue between React and DOM, you use this only once in our entire project, where we find the DOM element by Id which is root in our case,
+        and add React to this element(Top level element), there are other places we use this react-dom like ReactDOM.findDOMNode() to find any other elements.
+          find more here: https://stackoverflow.com/questions/34114350/react-vs-reactdom -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        <!-- http://qr.ae/TU1s6V
+          Babel helps to tranpile our JSX into plain JavaScript.
+          Babel is a JavaScript transpiler(in general terms a transpiler is a real world translator(Spanish to English))
+          A lot of times we need to write modern javascript and all the browsers do not understand it, so babel converts our modern javascrip into normal javascript
+          -->
+  </head>
+  <body>
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+        var  Greeting = React.createClass({
+          render(){
+            return (<h1>This is React With Babel</h1>);
+          }
+        })
+
+        ReactDOM.render(
+          <Greeting />,
+          document.getElementById('root')
+        );
+
+    </script>
+
+  </body>
+</html>
